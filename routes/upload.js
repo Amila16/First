@@ -15,12 +15,13 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + '-' +file.originalname )
   }
 })
-const upload = multer({ storage: storage }).single('file')
+//const upload = multer({ storage: storage }).single('file')
 
 
-app.post('/upload',upload,function(req, res) {
-
-    const filePost = req.file.file
+router.post('/upload', (req, res) => {
+    console.log("inside the upload route")
+    console.log(req.body.file) 
+    const filePost = req.body.file
 
     if(!filePost)
     {

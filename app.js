@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const auth = require("./routes/login");
 const register = require("./routes/register");
-//const upload = require("./routes/upload");
+const upload = require("./routes/upload");
 const port = process.env.port || 5000;
 
 
@@ -27,7 +27,7 @@ mongoose.connect("mongodb://localhost:27017/project-management", {
 
 app.use("/", auth);
 app.use("/new", register);
-//app.use("/",upload);
+app.use("/", upload);
 
 app.listen(port, () =>{
     console.log('server start on port' +port );
