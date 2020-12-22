@@ -5,7 +5,7 @@ const multer = require('multer')
 const cors = require('cors');
 
 app.use(cors())
-console.log("inside the upload file")
+//console.log("inside the upload file")
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
